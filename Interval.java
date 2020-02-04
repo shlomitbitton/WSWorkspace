@@ -1,6 +1,7 @@
 class Interval{
 
-	int start,end; 
+int start,end;
+
 	Interval(int start, int end) { 
 		if(start<end){
 			this.start=start; 
@@ -8,6 +9,6 @@ class Interval{
 		}else{
 			this.start=end; 
 			this.end=start;
-		}	
-	} 
+		}		
+	}
 }
