@@ -25,7 +25,6 @@ public class TestMergeOverlappingIntervals {
     arr2[0] = new Interval(2, 5);
     arr2[1] = new Interval(0, 6);
     arr2[2] = new Interval(3, 4);
-//test
 
   }
 
