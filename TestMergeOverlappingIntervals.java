@@ -1,9 +1,12 @@
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestMergeOverlappingIntervals {
@@ -12,7 +15,7 @@ public class TestMergeOverlappingIntervals {
   Interval[] arr3 = new Interval[3];
 
 
-  // @Before
+  @Before
   public void runBeforeTestMethod() {
 
     arr1[0] = new Interval(94133, 94133);
@@ -22,10 +25,6 @@ public class TestMergeOverlappingIntervals {
     arr2[0] = new Interval(2, 5);
     arr2[1] = new Interval(0, 6);
     arr2[2] = new Interval(3, 4);
-
-    arr3[0] = new Interval(1, 10);
-    arr3[1] = new Interval(100, 102);
-    arr3[2] = new Interval(10000000, 100000001);
 
 
   }
@@ -49,39 +48,38 @@ public class TestMergeOverlappingIntervals {
     assertTrue(check1); 
 
   } 
-    //assertNotEquals("test fails",MergeOverlappingIntervals.mergeIntervals(arr3),expectedSolution3);
-  
+   
+  @Test
+  public void testMergeOverlappingIntervals2() throws Exception{ 
+  System.out.println("-------------------------------");
 
-//   @Test
-//   public void testMergeOverlappingIntervals2() throws Exception{ 
-//   System.out.println("-------------------------------");
+    int[][] expectedSolution = new int[3][2];
+    List<Integer> list = new ArrayList<Integer>();
+    expectedSolution[0][0]=94133;
+    expectedSolution[0][1]=94133;
+    expectedSolution[1][0]=94600;
+    expectedSolution[1][1]=94699;
+    expectedSolution[2][0]=94200;
+    expectedSolution[2][1]=94299;
 
-//     int[][] expectedSolution = new int[3][2];
-//     expectedSolution[0][0]=94133;
-//     expectedSolution[0][1]=94133;
-//     expectedSolution[1][0]=94600;
-//     expectedSolution[1][1]=94699;
-//     expectedSolution[2][0]=94200;
-//     expectedSolution[2][1]=94299;
+    for(int i=0;i<expectedSolution.length;i++){
+      for(int j=0;j<expectedSolution[i].length;j++){
+        list.add(expectedSolution[i][j]);
+        System.out.println("list: "+list);
+      }
+    }
 
-//   ArrayList<Interval> solution = MergeOverlappingIntervals.mergeIntervals(arr1);
+
+  ArrayList<Interval> solution = MergeOverlappingIntervals.mergeIntervals(arr1);
+  List<Integer> listSolution = new ArrayList<Integer>();
  
-//   int[] convertedInterval = new int[2];
-//   int[][] expectedSolution2 = new int[3][2];
-//   for(int[] filler:expectedSolution2){
-//       for(Interval inter: solution){
-//         convertedInterval[0]=inter.start;
-//         convertedInterval[1]=inter.end;
-//         Arrays.asList(convertedInterval[0],convertedInterval[1]);
-//       }
-//   }
+  for(Interval inter:solution){
+    listSolution.add(inter.start);
+    listSolution.add(inter.end);
+    System.out.println("listSolution: "+listSolution);
+  }
+  assertEquals(list,listSolution); 
 
-
-//    boolean check1 = Arrays.deepEquals(expectedSolution2,expectedSolution);
-//    assertTrue(check1); 
-
-//  } 
-   //assertNotEquals("test fails",MergeOverlappingIntervals.mergeIntervals(arr3),expectedSolution3);
- 
+ } 
 
 }
