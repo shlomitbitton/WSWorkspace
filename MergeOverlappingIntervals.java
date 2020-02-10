@@ -5,8 +5,7 @@ import java.util.Stack;
 
 public class MergeOverlappingIntervals {
 
-	// The main function that takes a set of intervals, merges
-	// overlapping intervals and prints the result
+	// The main function that takes a set of intervals, merges overlapping intervals and prints the result
 	public static ArrayList<Interval> mergeIntervals(Interval[] arr) {
 
 		ArrayList<Interval> solution = new ArrayList<Interval>();
@@ -30,7 +29,7 @@ public class MergeOverlappingIntervals {
 		stack.push(arr[0]);
 
 		// Start from the next interval and merge if necessary
-		for (int i = 1; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++) {
 			// get interval from stack top
 			Interval top = stack.peek();
 
@@ -38,15 +37,18 @@ public class MergeOverlappingIntervals {
 			if (top.end < arr[i].start) {
 				stack.push(arr[i]);
 			}
-			// Otherwise update the ending range of top if ending of current interval is
-			// higher
+			// Otherwise update the ending range of top if ending of current interval is higher
 			else if (top.end < arr[i].end) {
 				top.end = arr[i].end;
 				stack.pop();
 				stack.push(top);
 			}
 		}
+		for(Interval t: stack){
+			System.out.print("["+t.start+","+t.end+"] ");
+		}
 		solution=printSolution(stack);
+		
 		return solution;
 	}
 
@@ -55,32 +57,11 @@ public class MergeOverlappingIntervals {
 		System.out.print("The Merged Intervals are: "); 
 		while (!stack.isEmpty()) 
 		{ 
-      reverse(stack);
-			Interval t = stack.pop(); 
-			System.out.print("["+t.start+","+t.end+"] ");
-			solution.add(t);
+			Interval s = stack.pop(); 
+				System.out.print("["+s.start+","+s.end+"] ");
+			solution.add(s);
 		} 
-	//	System.out.print("solution: "+solution);
 		return solution;
-  }
-  
-  public static void reverse (Stack<Interval> s){
-    
-    if(!s.isEmpty()){
-			Interval temp=(s.pop());
-			reverse(s);
-      insertatBottom(s, temp);
-    }
-  } 
-
-  public static void insertatBottom(Stack<Interval> s, Interval t ){
-		if (s.isEmpty()){
-			s.push(t);
-		}else{
-			Interval temp= s.pop();
-			insertatBottom(s, t);
-			s.push(temp);
-		}
   }
 
 	public static void main(String args[]) { 

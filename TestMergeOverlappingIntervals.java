@@ -54,12 +54,13 @@ public class TestMergeOverlappingIntervals {
 
     int[][] expectedSolution = new int[3][2];
     List<Integer> list = new ArrayList<Integer>();
-    expectedSolution[0][0]=94133;
-    expectedSolution[0][1]=94133;
-    expectedSolution[1][0]=94600;
-    expectedSolution[1][1]=94699;
-    expectedSolution[2][0]=94200;
-    expectedSolution[2][1]=94299;
+    expectedSolution[0][0]=94600;
+    expectedSolution[0][1]=94699;
+    expectedSolution[1][0]=94200;
+    expectedSolution[1][1]=94299;
+    expectedSolution[2][0]=94133;
+    expectedSolution[2][1]=94133;
+  
 
     for(int i=0;i<expectedSolution.length;i++){
       for(int j=0;j<expectedSolution[i].length;j++){
@@ -67,8 +68,6 @@ public class TestMergeOverlappingIntervals {
         System.out.println("list: "+list);
       }
     }
-
-
   ArrayList<Interval> solution = MergeOverlappingIntervals.mergeIntervals(arr1);
   List<Integer> listSolution = new ArrayList<Integer>();
  
@@ -80,5 +79,4 @@ public class TestMergeOverlappingIntervals {
   assertEquals(list,listSolution); 
 
  } 
-
 }
