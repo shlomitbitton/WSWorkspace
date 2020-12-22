@@ -34,16 +34,9 @@ public class MergeOverlappingIntervalsWithLinkedList {
 public static void main(String args[]) { 
 
    LinkedList<Interval> intervals = new LinkedList<Interval>(Arrays.asList(
-    // new Interval(94133,94133),
-    // new Interval(94200,94299),
-    // new Interval(94600,94699)));
-    // new Interval(94133,94133),
-    // new Interval(94200,94299),
-    // new Interval(94226,94399)));
-    new Interval(94133,94135),
-    new Interval(94134,94135),
-    new Interval(94190,94195),
-    new Interval(94195,94199)));
+    new Interval(94133,94133),
+      new Interval(94200,94299),
+      new Interval(94600,94699)));
     print(intervals);
   mergeIntervals(intervals);
 } 
