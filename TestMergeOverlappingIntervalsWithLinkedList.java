@@ -18,7 +18,7 @@ public class TestMergeOverlappingIntervalsWithLinkedList {
   }
 
   @Test
-  public static void testMergeOverlappingIntervalsWithLinkedList1() throws Exception {
+  public static void test1() throws Exception {
 
     LinkedList<Interval> intervals = new LinkedList<Interval>(
         Arrays.asList(new Interval(94133, 94133), new Interval(94200, 94299), new Interval(94600, 94699)));
@@ -26,12 +26,12 @@ public class TestMergeOverlappingIntervalsWithLinkedList {
     LinkedList<Interval> expectedList = new LinkedList<Interval>(
         Arrays.asList(new Interval(94133, 94133), new Interval(94200, 94299), new Interval(94600, 94699)));
 
-    Assert.assertNotEquals("testMergeOverlappingIntervalsWithLinkedList1 failed",
-        MergeOverlappingIntervalsWithLinkedList.mergeIntervals(intervals), expectedList);
+    Assert.assertNotEquals("test1 failed", MergeOverlappingIntervalsWithLinkedList.mergeIntervals(intervals),
+        expectedList);
   }
 
   @Test
-  public static void testMergeOverlappingIntervalsWithLinkedList2() throws Exception {
+  public static void test2() throws Exception {
 
     LinkedList<Interval> intervals = new LinkedList<Interval>(Arrays.asList(new Interval(94133, 94135),
         new Interval(94134, 94135), new Interval(94190, 94195), new Interval(94195, 94199)));
@@ -39,12 +39,12 @@ public class TestMergeOverlappingIntervalsWithLinkedList {
     LinkedList<Interval> expectedList = new LinkedList<Interval>(
         Arrays.asList(new Interval(94133, 94135), new Interval(94190, 94199)));
 
-    Assert.assertNotEquals("testMergeOverlappingIntervalsWithLinkedList2 failed",
-        MergeOverlappingIntervalsWithLinkedList.mergeIntervals(intervals), expectedList);
+    Assert.assertNotEquals("test2 failed", MergeOverlappingIntervalsWithLinkedList.mergeIntervals(intervals),
+        expectedList);
   }
 
   @Test
-  public static void testMergeOverlappingIntervalsWithLinkedList3() throws Exception {
+  public static void test3() throws Exception {
 
     LinkedList<Interval> intervals = new LinkedList<Interval>(
         Arrays.asList(new Interval(94133, 94135), new Interval(94200, 94299), new Interval(94226, 94399)));
@@ -52,7 +52,7 @@ public class TestMergeOverlappingIntervalsWithLinkedList {
     LinkedList<Interval> expectedList = new LinkedList<Interval>(
         Arrays.asList(new Interval(94133, 94135), new Interval(94200, 94399)));
 
-    Assert.assertNotEquals("testMergeOverlappingIntervalsWithLinkedList3 failed",
-        MergeOverlappingIntervalsWithLinkedList.mergeIntervals(intervals), expectedList);
+    Assert.assertNotEquals("test3 failed", MergeOverlappingIntervalsWithLinkedList.mergeIntervals(intervals),
+        expectedList);
   }
 }

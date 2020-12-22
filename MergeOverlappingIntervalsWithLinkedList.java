@@ -1,3 +1,6 @@
+// I chose to use LinkedList so I can determined  the last element in the list.
+
+
 import java.util.Arrays;
 import java.util.LinkedList;
 
