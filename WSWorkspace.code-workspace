@@ -7,6 +7,7 @@
 	"settings": {
 		"java.project.referencedLibraries": [
 			"lib/**/*.jar",
+			"junit-4.13.1.jar",
 			"/Users/shlomit/junit-4.13.1.jar"
 		]
 	}
