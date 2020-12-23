@@ -18,7 +18,7 @@ public class TestMergeOverlappingIntervalsWithLinkedList {
   }
 
   @Test
-  public static void test1() throws Exception {
+  public  void test1() throws Exception {
 
     LinkedList<Interval> intervals = new LinkedList<Interval>(
         Arrays.asList(new Interval(94133, 94133), new Interval(94200, 94299), new Interval(94600, 94699)));
@@ -31,7 +31,7 @@ public class TestMergeOverlappingIntervalsWithLinkedList {
   }
 
   @Test
-  public static void test2() throws Exception {
+  public  void test2() throws Exception {
 
     LinkedList<Interval> intervals = new LinkedList<Interval>(Arrays.asList(new Interval(94133, 94135),
         new Interval(94134, 94135), new Interval(94190, 94195), new Interval(94195, 94199)));
@@ -44,7 +44,7 @@ public class TestMergeOverlappingIntervalsWithLinkedList {
   }
 
   @Test
-  public static void test3() throws Exception {
+  public  void test3() throws Exception {
 
     LinkedList<Interval> intervals = new LinkedList<Interval>(
         Arrays.asList(new Interval(94133, 94135), new Interval(94200, 94299), new Interval(94226, 94399)));
