@@ -8,14 +8,6 @@ import org.junit.Test;
 
 public class TestMergeOverlappingIntervalsWithLinkedList {
 
-  @BeforeClass
-  public static void beforeTestCaseOneClass() {
-    System.out.println("————————————————");
-    System.out.println();
-    System.out.println("Executing Test methods of Test Case One class…");
-    System.out.println("————————————————");
-    System.out.println();
-  }
 
   @Test
   public  void test1() throws Exception {
